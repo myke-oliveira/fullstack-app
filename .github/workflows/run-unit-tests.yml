@@ -9,6 +9,5 @@ jobs:
       - uses: actions/setup-node@v3
         with:
           node-version: '18'
-      - run: cd site
-      - run: npm i
-      - run: npm run test
+      - run: cd site && npm i && npm run test
+
