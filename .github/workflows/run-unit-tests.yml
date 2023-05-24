@@ -1,0 +1,14 @@
+name: run-unit-tests
+run-name: ${{ github.actor }} is running unit tests
+on: [push]
+jobs:
+  check-bats-version:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+      - run: cd site
+      - run: npm i
+      - run: npm run test
